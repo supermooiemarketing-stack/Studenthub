@@ -2,7 +2,7 @@
   <!-- Hub/Network circles representing connectivity -->
   <g id="hub-network">
     <!-- Central hub circle -->
-    <circle cx="30" cy="30" r="8" fill="#9ACD32"/>
+    <circle cx="30" cy="30" r="8" fill="#2E8B57"/>
 
     <!-- Surrounding connection nodes -->
     <circle cx="15" cy="15" r="4" fill="#2D2D2D"/>
@@ -11,18 +11,18 @@
     <circle cx="45" cy="45" r="4" fill="#2D2D2D"/>
 
     <!-- Connection lines -->
-    <line x1="30" y1="30" x2="15" y2="15" stroke="#7CB342" stroke-width="2"/>
-    <line x1="30" y1="30" x2="45" y2="15" stroke="#7CB342" stroke-width="2"/>
-    <line x1="30" y1="30" x2="15" y2="45" stroke="#7CB342" stroke-width="2"/>
-    <line x1="30" y1="30" x2="45" y2="45" stroke="#7CB342" stroke-width="2"/>
+    <line x1="30" y1="30" x2="15" y2="15" stroke="#1F6B4A" stroke-width="2"/>
+    <line x1="30" y1="30" x2="45" y2="15" stroke="#1F6B4A" stroke-width="2"/>
+    <line x1="30" y1="30" x2="15" y2="45" stroke="#1F6B4A" stroke-width="2"/>
+    <line x1="30" y1="30" x2="45" y2="45" stroke="#1F6B4A" stroke-width="2"/>
   </g>
 
   <!-- Growth element - leaf sprouting from hub -->
   <g id="growth-leaf">
     <path d="M38 22 Q45 15 48 8 Q46 12 42 16 Q45 14 48 10"
-          fill="none" stroke="#9ACD32" stroke-width="2.5" stroke-linecap="round"/>
+          fill="none" stroke="#2E8B57" stroke-width="2.5" stroke-linecap="round"/>
     <path d="M38 22 Q42 18 45 12"
-          fill="none" stroke="#B8E02F" stroke-width="1.5" stroke-linecap="round"/>
+          fill="none" stroke="#3CB371" stroke-width="1.5" stroke-linecap="round"/>
   </g>
 
   <!-- Media play button element -->
@@ -33,7 +33,7 @@
 
   <!-- Text: StudentHub Media -->
   <text x="62" y="28" font-family="'Poppins', sans-serif" font-size="16" font-weight="700" fill="#2D2D2D">
-    <tspan fill="#9ACD32">Student</tspan><tspan fill="#2D2D2D">Hub</tspan>
+    <tspan fill="#2E8B57">Student</tspan><tspan fill="#2D2D2D">Hub</tspan>
   </text>
   <text x="62" y="45" font-family="'Poppins', sans-serif" font-size="11" font-weight="500" fill="#555555">
     Media

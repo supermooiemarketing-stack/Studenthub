@@ -5,19 +5,19 @@
 
 /* ===== CSS Variables ===== */
 :root {
-    /* Primary Colors - Fresh & Modern */
-    --primary-lime: #9ACD32;
+    /* Primary Colors - Seaweed Green Theme */
+    --primary-seaweed: #2E8B57;
     --primary-dark: #2D2D2D;
     --primary-light: #F5F5F5;
 
-    /* Accent Colors - Energetic & Creative */
-    --accent-lime-light: #B8E02F;
-    --accent-lime-dark: #7CB342;
+    /* Accent Colors - Ocean & Nature Inspired */
+    --accent-seaweed-light: #3CB371;
+    --accent-seaweed-dark: #1F6B4A;
     --accent-gray: #555555;
     --accent-gray-light: #777777;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #9ACD32 0%, #7CB342 100%);
+    --gradient-primary: linear-gradient(135deg, #2E8B57 0%, #1F6B4A 100%);
     --gradient-secondary: linear-gradient(135deg, #2D2D2D 0%, #555555 100%);
     --gradient-hero: linear-gradient(135deg, rgba(45, 45, 45, 0.95) 0%, rgba(85, 85, 85, 0.95) 100%);
 
@@ -123,7 +123,7 @@ ul {
 }
 
 .logo-student {
-    color: var(--primary-lime);
+    color: var(--primary-seaweed);
 }
 
 .logo-hub {
@@ -148,7 +148,7 @@ ul {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--primary-lime);
+    color: var(--primary-seaweed);
 }
 
 .nav-menu a::after {
@@ -229,7 +229,7 @@ ul {
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(154, 205, 50, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(46, 139, 87, 0.3) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 20s infinite ease-in-out;
 }
@@ -241,7 +241,7 @@ ul {
     left: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(124, 179, 66, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(31, 107, 74, 0.3) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 15s infinite ease-in-out reverse;
 }
@@ -262,7 +262,7 @@ ul {
 }
 
 .highlight {
-    background: linear-gradient(to right, #B8E02F, #7CB342);
+    background: linear-gradient(to right, #3CB371, #2E8B57);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -349,7 +349,7 @@ ul {
 
 .btn-primary {
     background: white;
-    color: var(--primary-lime);
+    color: var(--primary-seaweed);
     box-shadow: var(--shadow-md);
 }
 
@@ -366,23 +366,23 @@ ul {
 
 .btn-secondary:hover {
     background: white;
-    color: var(--primary-lime);
+    color: var(--primary-seaweed);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--primary-lime);
-    border: 2px solid var(--primary-lime);
+    color: var(--primary-seaweed);
+    border: 2px solid var(--primary-seaweed);
 }
 
 .btn-outline:hover {
-    background: var(--primary-lime);
+    background: var(--primary-seaweed);
     color: white;
 }
 
 .btn-white {
     background: white;
-    color: var(--primary-lime);
+    color: var(--primary-seaweed);
 }
 
 .btn-white:hover {
@@ -606,7 +606,7 @@ ul {
 }
 
 .footer-col a:hover {
-    color: var(--primary-lime);
+    color: var(--primary-seaweed);
 }
 
 .social-links {
@@ -748,7 +748,7 @@ ul {
 }
 
 .member-role {
-    color: var(--accent-lime-dark);
+    color: var(--accent-seaweed-dark);
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -772,7 +772,7 @@ ul {
 
 .model-card {
     padding: 2rem;
-    border-left: 4px solid var(--accent-lime-dark);
+    border-left: 4px solid var(--accent-seaweed-dark);
     background: var(--gray-50);
     border-radius: 10px;
 }
@@ -843,7 +843,7 @@ ul {
 }
 
 .social-links-contact a {
-    color: var(--accent-lime-dark);
+    color: var(--accent-seaweed-dark);
     font-weight: 600;
 }
 
@@ -900,7 +900,7 @@ ul {
 }
 
 .required {
-    color: var(--primary-lime);
+    color: var(--primary-seaweed);
 }
 
 .form-group input,
@@ -919,7 +919,7 @@ ul {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-lime);
+    border-color: var(--primary-seaweed);
 }
 
 .form-group textarea {
