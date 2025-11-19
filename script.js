@@ -215,7 +215,7 @@ function createScrollToTopButton() {
         right: 30px;
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #9ACD32 0%, #7CB342 100%);
+        background: linear-gradient(135deg, #2E8B57 0%, #1F6B4A 100%);
         color: white;
         border: none;
         border-radius: 50%;
@@ -340,8 +340,8 @@ function highlightActivePage() {
 document.addEventListener('DOMContentLoaded', highlightActivePage);
 
 // ===== Console Welcome Message =====
-console.log('%cWelcome to StudentHub Media!', 'color: #9ACD32; font-size: 20px; font-weight: bold;');
-console.log('%cInterested in our code? We\'d love to work with you!', 'color: #7CB342; font-size: 14px;');
+console.log('%cWelcome to StudentHub Media!', 'color: #2E8B57; font-size: 20px; font-weight: bold;');
+console.log('%cInterested in our code? We\'d love to work with you!', 'color: #3CB371; font-size: 14px;');
 console.log('%cContact us at: info@studenthubmedia.nl', 'color: #2D2D2D; font-size: 14px;');
 
 // ===== Performance: Preload Important Resources =====
@@ -417,4 +417,279 @@ document.querySelectorAll('img').forEach(img => {
         this.style.display = 'none';
         console.warn('Image failed to load:', this.src);
     });
+});
+
+// ===== TESTIMONIALS CAROUSEL =====
+function initTestimonialsCarousel() {
+    const carousel = document.querySelector('.testimonials-carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.testimonials-track');
+    const slides = Array.from(track.children);
+    const dotsNav = carousel.querySelector('.carousel-dots');
+    const prevBtn = carousel.querySelector('.carousel-btn-prev');
+    const nextBtn = carousel.querySelector('.carousel-btn-next');
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    // Create dots
+    if (dotsNav) {
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsNav.appendChild(dot);
+        });
+    }
+
+    const dots = dotsNav ? Array.from(dotsNav.children) : [];
+
+    function updateSlidePosition() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
+        resetAutoplay();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlidePosition();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    // Event listeners
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) nextSlide();
+        if (touchEndX > touchStartX + 50) prevSlide();
+    }
+
+    // Start autoplay
+    startAutoplay();
+}
+
+// ===== PORTFOLIO FILTER SYSTEM =====
+function initPortfolioFilters() {
+    const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    if (filterBtns.length === 0 || portfolioItems.length === 0) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Filter items
+            portfolioItems.forEach(item => {
+                const categories = item.getAttribute('data-category').split(' ');
+
+                if (filter === 'all' || categories.includes(filter)) {
+                    item.style.display = '';
+                    item.style.animation = 'fadeInUp 0.5s ease';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// ===== VIDEO MODAL/LIGHTBOX =====
+function initVideoModal() {
+    const videoWrappers = document.querySelectorAll('.video-wrapper');
+    let modal = document.getElementById('videoModal');
+
+    // Create modal if it doesn't exist
+    if (!modal && videoWrappers.length > 0) {
+        modal = document.createElement('div');
+        modal.id = 'videoModal';
+        modal.className = 'video-modal';
+        modal.innerHTML = `
+            <div class="video-modal-content">
+                <button class="video-modal-close" aria-label="Close video">&times;</button>
+                <div class="video-modal-body"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    if (!modal) return;
+
+    const modalBody = modal.querySelector('.video-modal-body');
+    const closeBtn = modal.querySelector('.video-modal-close');
+
+    videoWrappers.forEach(wrapper => {
+        const img = wrapper.querySelector('img');
+        if (!img) return;
+
+        // Add click indicator
+        wrapper.style.cursor = 'pointer';
+        wrapper.setAttribute('title', 'Click to view full screen');
+
+        wrapper.addEventListener('click', function(e) {
+            e.preventDefault();
+            const imgSrc = img.getAttribute('src');
+            const imgAlt = img.getAttribute('alt') || 'Portfolio image';
+
+            modalBody.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" style="max-width: 90%; max-height: 90vh; border-radius: 10px;">`;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        modalBody.innerHTML = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
+}
+
+// ===== WHATSAPP CHAT WIDGET =====
+function initWhatsAppWidget() {
+    const whatsappWidget = document.createElement('div');
+    whatsappWidget.className = 'whatsapp-widget';
+    whatsappWidget.innerHTML = `
+        <a href="https://wa.me/31501234567?text=Hi%20StudentHub%20Media!%20I'm%20interested%20in%20your%20services."
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Chat with us on WhatsApp"
+           class="whatsapp-button">
+            <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
+                <path d="M16 0C7.164 0 0 7.164 0 16c0 2.825.738 5.48 2.028 7.788L0 32l8.425-2.213A15.917 15.917 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333A13.277 13.277 0 0 1 8.96 27.28l-.477-.283-4.943 1.297 1.32-4.827-.311-.495A13.253 13.253 0 0 1 2.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+                <path d="M23.197 19.803c-.357-.179-2.116-1.044-2.443-1.163-.328-.119-.566-.179-.805.179-.238.357-.924 1.163-1.133 1.401-.209.238-.417.268-.774.089-.357-.179-1.508-.556-2.873-1.773-1.062-.947-1.779-2.117-1.988-2.474-.209-.357-.022-.55.157-.728.161-.161.357-.417.536-.626.179-.209.238-.357.357-.596.119-.238.06-.447-.03-.626-.089-.179-.805-1.94-1.103-2.653-.29-.694-.584-.6-.805-.611-.209-.011-.447-.013-.686-.013s-.626.089-.954.447c-.328.357-1.252 1.223-1.252 2.982s1.282 3.458 1.461 3.696c.179.238 2.521 3.85 6.107 5.397.853.368 1.52.587 2.039.751.857.272 1.636.234 2.252.142.687-.103 2.116-.865 2.414-1.701.298-.835.298-1.551.209-1.701-.089-.149-.328-.238-.686-.417z"/>
+            </svg>
+            <span>Chat with us</span>
+        </a>
+    `;
+    document.body.appendChild(whatsappWidget);
+}
+
+// ===== NEWSLETTER SIGNUP HANDLING =====
+function initNewsletterSignup() {
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (!newsletterForm) return;
+
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const emailInput = this.querySelector('input[type="email"]');
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const messageDiv = this.querySelector('.newsletter-message') || createMessageDiv(this);
+
+        const email = emailInput.value.trim();
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showNewsletterMessage(messageDiv, 'Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Show loading state
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Subscribing...</span>';
+        submitBtn.disabled = true;
+
+        // Simulate API call (replace with actual implementation)
+        setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            showNewsletterMessage(messageDiv, 'Thanks for subscribing! Check your email for confirmation.', 'success');
+            newsletterForm.reset();
+        }, 1500);
+    });
+
+    function createMessageDiv(form) {
+        const div = document.createElement('div');
+        div.className = 'newsletter-message';
+        form.appendChild(div);
+        return div;
+    }
+
+    function showNewsletterMessage(div, message, type) {
+        div.textContent = message;
+        div.className = 'newsletter-message ' + type;
+        div.style.display = 'block';
+
+        setTimeout(() => {
+            div.style.display = 'none';
+        }, 5000);
+    }
+}
+
+// ===== INITIALIZE ALL NEW FEATURES =====
+document.addEventListener('DOMContentLoaded', function() {
+    initTestimonialsCarousel();
+    initPortfolioFilters();
+    initVideoModal();
+    initWhatsAppWidget();
+    initNewsletterSignup();
 });

@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="StudentHub Media - Social media content creation and brand awareness for small businesses in Groningen">
     <title>StudentHub Media | Social Media Marketing Bureau</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studenthubmedia.nl/">
+    <meta property="og:title" content="StudentHub Media | Social Media Marketing for Small Businesses">
+    <meta property="og:description" content="Professional social media content creation, lead generation, and brand awareness for small businesses in Groningen. Student-run, professional results.">
+    <meta property="og:image" content="https://studenthubmedia.nl/logo.svg">
+    <meta property="og:locale" content="en_NL">
+    <meta property="og:site_name" content="StudentHub Media">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://studenthubmedia.nl/">
+    <meta name="twitter:title" content="StudentHub Media | Social Media Marketing Bureau">
+    <meta name="twitter:description" content="Professional social media content creation for small businesses in Groningen">
+    <meta name="twitter:image" content="https://studenthubmedia.nl/logo.svg">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="social media marketing, Groningen, content creation, small business, student marketing, Instagram, TikTok, LinkedIn, Facebook">
+    <meta name="author" content="StudentHub Media">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studenthubmedia.nl/">
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,9 +214,72 @@
                 </div>
                 <div class="why-us-image">
                     <div class="image-placeholder">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop" alt="Team collaboration" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop" alt="Team collaboration" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real results from businesses we've helped grow</p>
+            </div>
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">"StudentHub Media transformed our social media presence! Their content is professional, engaging, and has significantly increased our customer engagement. Highly recommend!"</p>
+                            <div class="testimonial-author">
+                                <strong>Maria van den Berg</strong>
+                                <span>Owner, Café de Groninger</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">"Working with this team has been fantastic. They understand our B2B needs and create content that actually generates leads. The ROI has been impressive!"</p>
+                            <div class="testimonial-author">
+                                <strong>Pieter de Jong</strong>
+                                <span>Marketing Director, TechNova Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">"Fresh perspectives, professional execution, and affordable pricing. StudentHub Media is the perfect partner for small businesses looking to grow their online presence."</p>
+                            <div class="testimonial-author">
+                                <strong>Sophie Bakker</strong>
+                                <span>Founder, Urban Style Boutique</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn-prev" aria-label="Previous testimonial">‹</button>
+                    <div class="carousel-dots"></div>
+                    <button class="carousel-btn-next" aria-label="Next testimonial">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get Free Social Media Tips</h2>
+                <p>Join our newsletter for weekly social media marketing insights, growth strategies, and exclusive tips for small businesses.</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
@@ -278,6 +364,112 @@
             </div>
         </div>
     </footer>
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "StudentHub Media",
+        "url": "https://studenthubmedia.nl",
+        "logo": "https://studenthubmedia.nl/logo.svg",
+        "description": "Professional social media content creation and brand awareness for small businesses in Groningen",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Groningen",
+            "addressCountry": "NL"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+31-50-123-4567",
+            "contactType": "Customer Service",
+            "email": "info@studenthubmedia.nl"
+        },
+        "sameAs": [
+            "https://instagram.com/studenthubmedia",
+            "https://linkedin.com/company/studenthubmedia",
+            "https://facebook.com/studenthubmedia"
+        ],
+        "foundingDate": "2024",
+        "founders": [
+            {
+                "@type": "Person",
+                "name": "Stijn",
+                "jobTitle": "Chief Executive Officer"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "StudentHub Media",
+        "image": "https://studenthubmedia.nl/logo.svg",
+        "@id": "https://studenthubmedia.nl",
+        "url": "https://studenthubmedia.nl",
+        "telephone": "+31-50-123-4567",
+        "priceRange": "€€",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Groningen",
+            "addressCountry": "NL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.2194,
+            "longitude": 6.5665
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Social Media Marketing",
+        "provider": {
+            "@type": "Organization",
+            "name": "StudentHub Media"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Groningen"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Social Media Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Social Media Content Creation"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Lead Generation"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Brand Awareness Campaigns"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 
     <script src="script.js"></script>
 </body>

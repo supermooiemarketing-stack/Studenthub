@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="View StudentHub Media's portfolio of social media content and video productions">
     <title>Portfolio | StudentHub Media</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studenthubmedia.nl/portfolio.html">
+    <meta property="og:title" content="Portfolio | StudentHub Media">
+    <meta property="og:description" content="View our best social media content and video productions for businesses in Groningen">
+    <meta property="og:image" content="https://studenthubmedia.nl/logo.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio | StudentHub Media">
+    <meta name="twitter:description" content="View our best social media content and video productions">
+
+    <link rel="canonical" href="https://studenthubmedia.nl/portfolio.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,12 +75,21 @@
                 <p>Our latest video productions showcasing different styles and industries</p>
             </div>
 
+            <!-- Portfolio Filters -->
+            <div class="portfolio-filters">
+                <button class="portfolio-filter-btn active" data-filter="all">All Projects</button>
+                <button class="portfolio-filter-btn" data-filter="social-media">Social Media</button>
+                <button class="portfolio-filter-btn" data-filter="b2b">B2B</button>
+                <button class="portfolio-filter-btn" data-filter="retail">Retail</button>
+                <button class="portfolio-filter-btn" data-filter="video">Video Production</button>
+            </div>
+
             <!-- Video 1 -->
-            <div class="video-showcase">
+            <div class="video-showcase portfolio-item" data-category="social-media retail">
                 <div class="video-content">
                     <div class="video-wrapper">
                         <!-- Placeholder for actual video -->
-                        <img src="https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?w=800&h=450&fit=crop" alt="Café social media content" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?w=800&h=450&fit=crop" alt="Café social media content" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="video-info">
                         <h3>Local Café Social Media Campaign</h3>
@@ -104,11 +127,11 @@
             </div>
 
             <!-- Video 2 -->
-            <div class="video-showcase reverse">
+            <div class="video-showcase reverse portfolio-item" data-category="b2b video">
                 <div class="video-content">
                     <div class="video-wrapper">
                         <!-- Placeholder for actual video -->
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop" alt="B2B technology presentation" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop" alt="B2B technology presentation" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="video-info">
                         <h3>B2B Technology Solutions Explainer</h3>
@@ -146,11 +169,11 @@
             </div>
 
             <!-- Video 3 -->
-            <div class="video-showcase">
+            <div class="video-showcase portfolio-item" data-category="social-media retail video">
                 <div class="video-content">
                     <div class="video-wrapper">
                         <!-- Placeholder for actual video -->
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=450&fit=crop" alt="Retail store launch campaign" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=450&fit=crop" alt="Retail store launch campaign" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="video-info">
                         <h3>Retail Store Brand Launch</h3>
