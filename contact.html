@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with StudentHub Media - Let's discuss your social media marketing needs">
+    <title>Contact Us | StudentHub Media</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-student">Student</span><span class="logo-hub">Hub</span> <span class="logo-media">Media</span>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Ready to take your social media to the next level? Let's talk!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Let's Start a Conversation</h2>
+                    <p class="contact-intro">Whether you're a small business looking to boost your social media presence or just want to learn more about what we do, we'd love to hear from you.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Groningen, Netherlands<br>Serving businesses throughout the region</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@studenthubmedia.nl<br>We typically respond within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+31 (0) 50 123 4567<br>Monday - Friday, 9:00 - 17:00</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div>
+                                <h3>Social Media</h3>
+                                <div class="social-links-contact">
+                                    <a href="#" aria-label="Instagram">Instagram</a>
+                                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                                    <a href="#" aria-label="Facebook">Facebook</a>
+                                    <a href="#" aria-label="TikTok">TikTok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-hours">
+                        <h3>Office Hours</h3>
+                        <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                        <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
+                        <p><strong>Sunday:</strong> Closed</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-header">
+                            <h2>Send Us a Message</h2>
+                            <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+31 6 1234 5678">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In <span class="required">*</span></label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="social-media-content">Social Media Content Creation</option>
+                                <option value="lead-generation">Lead Generation</option>
+                                <option value="brand-awareness">Brand Awareness Campaign</option>
+                                <option value="full-package">Full Package</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Monthly Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select a budget range</option>
+                                <option value="under-500">Under €500</option>
+                                <option value="500-1000">€500 - €1,000</option>
+                                <option value="1000-2000">€1,000 - €2,000</option>
+                                <option value="2000-plus">€2,000+</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project and what you're looking to achieve..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span>I agree to be contacted by StudentHub Media regarding my inquiry <span class="required">*</span></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader" style="display: none;">Sending...</span>
+                        </button>
+
+                        <div id="formMessage" class="form-message" style="display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about our services</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How quickly can you start?</h3>
+                    <p>We can typically begin creating content within 1-2 weeks of our initial consultation, depending on your specific needs and our current schedule.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's included in your monthly fee?</h3>
+                    <p>Our monthly packages include content creation, editing, posting schedules, and ongoing consultation. We customize each package to fit your specific needs.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you work with businesses outside Groningen?</h3>
+                    <p>While we're based in Groningen, we're happy to work with businesses throughout the Netherlands, especially for digital content creation.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What platforms do you specialize in?</h3>
+                    <p>We create content optimized for Instagram, LinkedIn, Facebook, and TikTok, ensuring your message reaches your audience effectively on each platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>StudentHub Media</h3>
+                    <p>Your partner in social media success. Based in Groningen, serving small businesses across diverse markets.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Facebook">👥</a>
+                        <a href="#" aria-label="TikTok">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Social Media Content</a></li>
+                        <li><a href="#">Lead Generation</a></li>
+                        <li><a href="#">Brand Awareness</a></li>
+                        <li><a href="#">Content Strategy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Groningen, Netherlands</li>
+                        <li>info@studenthubmedia.nl</li>
+                        <li>+31 (0) 50 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StudentHub Media. All rights reserved. | A Rijksuniversiteit Groningen Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
