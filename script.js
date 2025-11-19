@@ -215,7 +215,7 @@ function createScrollToTopButton() {
         right: 30px;
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #4A90E2 0%, #8B5CF6 100%);
+        background: linear-gradient(135deg, #9ACD32 0%, #7CB342 100%);
         color: white;
         border: none;
         border-radius: 50%;
@@ -340,9 +340,9 @@ function highlightActivePage() {
 document.addEventListener('DOMContentLoaded', highlightActivePage);
 
 // ===== Console Welcome Message =====
-console.log('%c👋 Welcome to StudentHub Media!', 'color: #4A90E2; font-size: 20px; font-weight: bold;');
-console.log('%cInterested in our code? We\'d love to work with you!', 'color: #FF6B6B; font-size: 14px;');
-console.log('%cContact us at: info@studenthubmedia.nl', 'color: #8B5CF6; font-size: 14px;');
+console.log('%cWelcome to StudentHub Media!', 'color: #9ACD32; font-size: 20px; font-weight: bold;');
+console.log('%cInterested in our code? We\'d love to work with you!', 'color: #7CB342; font-size: 14px;');
+console.log('%cContact us at: info@studenthubmedia.nl', 'color: #2D2D2D; font-size: 14px;');
 
 // ===== Performance: Preload Important Resources =====
 function preloadResources() {
