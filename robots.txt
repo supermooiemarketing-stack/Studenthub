@@ -1,0 +1,24 @@
+# StudentHub Media - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://studenthubmedia.nl/sitemap.xml
+
+# Crawl delay (be nice to our server)
+Crawl-delay: 1
+
+# Disallow admin/private areas if any exist in future
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all common search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
